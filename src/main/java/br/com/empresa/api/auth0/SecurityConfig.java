@@ -32,8 +32,8 @@ public class SecurityConfig {
 	        .mvcMatchers("/arquivos/uploadFile").permitAll()
 	        .mvcMatchers("/arquivos/uploadMultipleFiles").permitAll()
 	        .mvcMatchers("/arquivos/downloadFile/*").authenticated()
-	        .and().cors()
-	        .and().oauth2ResourceServer().jwt();
+	        .and().cors();
+	        //.and().oauth2ResourceServer().jwt();
         return http.build();
     }
 	
