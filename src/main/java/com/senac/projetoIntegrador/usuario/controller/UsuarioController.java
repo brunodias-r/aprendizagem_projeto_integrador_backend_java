@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.senac.projetoIntegrador.usuario.dto.UsuarioDto;
+import com.senac.projetoIntegrador.usuario.response.UsuarioResponse;
 import com.senac.projetoIntegrador.usuario.service.IUsuarioService;
 
 @RestController
@@ -18,8 +19,11 @@ public class UsuarioController {
 	IUsuarioService service;
 	
 	@GetMapping("/{id}")
-	public ResponseEntity<UsuarioDto> retrieveUsuario(@PathVariable(required = true, value = "id") String id){
+	public ResponseEntity<UsuarioResponse> retrieveUsuario(@PathVariable(required = true, value = "id") String id){
 		UsuarioDto usuario = service.getUsuario(id);
-		return new ResponseEntity<UsuarioDto>(usuario, HttpStatus.OK);
+		UsuarioResponse usuarioResponse = new UsuarioResponse();
+		usuarioResponse.setNome(usuario.getNome());
+		//usuarioResponse.setFoto(usuario.getFoto());
+		return new ResponseEntity<UsuarioResponse>(usuarioResponse, HttpStatus.OK);
 	}
 }

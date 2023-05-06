@@ -15,6 +15,7 @@ public class UsuarioDto {
 	//private Blob foto;
 	private int status;
 	private String username;
+	
 	public String getId() {
 		return id;
 	}
