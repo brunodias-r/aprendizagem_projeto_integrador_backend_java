@@ -20,7 +20,7 @@ public class UsuarioRepository implements IUsuarioRepository{
 	private JdbcTemplate dbConnection;
 	
 	@Autowired
-	Queries queries;
+	QueriesUsuario queries;
 	
 	private class UsuarioMapper implements RowMapper<UsuarioDto> {
 		@Override
