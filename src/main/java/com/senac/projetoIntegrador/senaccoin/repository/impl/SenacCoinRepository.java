@@ -27,7 +27,7 @@ public class SenacCoinRepository implements ISenacCoinRepository {
     private JdbcTemplate dbConnection;
 
     @Autowired
-    Queries queries;
+    QueriesUsuario queries;
 
     private class SenacCoinMapper implements RowMapper<SenacCoinDto> {
 
