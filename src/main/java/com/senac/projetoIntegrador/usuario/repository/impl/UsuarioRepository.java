@@ -26,6 +26,7 @@ public class UsuarioRepository implements IUsuarioRepository{
 		@Override
 		public UsuarioDto mapRow(ResultSet rs, int rowNum) throws SQLException {
 			UsuarioDto usuarioDto = new UsuarioDto();
+			usuarioDto.setId(rs.getString("Id"));
 			usuarioDto.setCpf(rs.getString("usuario_cpf"));
 			usuarioDto.setNome(rs.getString("usuario_nome_completo"));
 			usuarioDto.setApelido(rs.getString("usuario_apelido"));
@@ -33,7 +34,7 @@ public class UsuarioRepository implements IUsuarioRepository{
 			usuarioDto.setDataNascimento(rs.getTimestamp("usuario_data_nascimento"));
 			usuarioDto.setTelefone(rs.getString("usuario_telefone"));
 			usuarioDto.setDataCadastro(rs.getTimestamp("usuario_data_cadastro"));
-			usuarioDto.setFoto(rs.getString("usuario_foto"));
+			//usuarioDto.setFoto(rs.getBlob("usuario_foto"));
 			usuarioDto.setStatus(rs.getInt("usuario_status"));
 			return usuarioDto;
 		}

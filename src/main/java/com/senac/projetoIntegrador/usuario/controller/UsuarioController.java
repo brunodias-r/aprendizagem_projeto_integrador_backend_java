@@ -18,7 +18,7 @@ public class UsuarioController {
 	IUsuarioService service;
 	
 	@GetMapping("/{id}")
-	public ResponseEntity<UsuarioDto> retrieveUsuario(@PathVariable String id){
+	public ResponseEntity<UsuarioDto> retrieveUsuario(@PathVariable(required = true, value = "id") String id){
 		UsuarioDto usuario = service.getUsuario(id);
 		return new ResponseEntity<UsuarioDto>(usuario, HttpStatus.OK);
 	}
