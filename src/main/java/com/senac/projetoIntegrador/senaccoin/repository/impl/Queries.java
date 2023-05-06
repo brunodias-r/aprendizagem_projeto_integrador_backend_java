@@ -2,7 +2,7 @@ package com.senac.projetoIntegrador.senaccoin.repository.impl;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-public class QueriesUsuario {
+public class Queries {
     private String insertMovimentacao = """
                 INSERT INTO senac_coin_movimentacao (senac_coin_movimentacao_data, senac_coin_movimentacao_observacao, senac_coin_movimentacao_valor, senac_coin_movimentacao_status, usuario_id)
                 VALUES (?, ?, ?, ?, ?);

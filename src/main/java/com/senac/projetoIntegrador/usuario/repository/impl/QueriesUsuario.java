@@ -3,7 +3,7 @@ package com.senac.projetoIntegrador.usuario.repository.impl;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-public class Queries {
+public class QueriesUsuario {
 	private String getUsuarioById = """
 				SELECT * FROM usuario WHERE Id = ?;
 			""";
