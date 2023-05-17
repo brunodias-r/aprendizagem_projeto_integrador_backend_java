@@ -25,7 +25,6 @@ CREATE TABLE IF NOT EXISTS senac_coin (
 	FOREIGN KEY (usuario_id) REFERENCES usuario(Id)
 );
 
-
 CREATE TABLE IF NOT EXISTS senac_coin_movimentacao (
     senac_coin_movimentacao_id BIGINT(20) NOT NULL auto_increment,
     senac_coin_movimentacao_data DATETIME NOT NULL,
@@ -35,6 +34,40 @@ CREATE TABLE IF NOT EXISTS senac_coin_movimentacao (
     usuario_id VARCHAR(255) NOT NULL,
     PRIMARY KEY (senac_coin_movimentacao_id),
     FOREIGN KEY (usuario_id) REFERENCES usuario(Id)
+);
+
+CREATE TABLE IF NOT EXISTS unidade_curricular (
+ unidade_curricular_id BIGINT NOT NULL auto_increment,
+ unidade_curricular_modulo INT NOT NULL,
+ unidade_curricular_nome VARCHAR(255) NOT NULL,
+ unidade_curricular_carga_horaria INT NOT NULL,
+ unidade_curricular_concluida BOOLEAN NOT NULL,
+ unidade_curricular_trancada BOOLEAN NOT NULL,
+ unidade_curricular_cursando BOOLEAN NOT NULL,
+ unidade_curricular_pendente BOOLEAN NOT NULL,
+	PRIMARY KEY (unidade_curricular_id),
+);
+
+INSERT INTO unidade_curricular
+(
+ unidade_curricular_id,
+ unidade_curricular_modulo,
+ unidade_curricular_nome,
+ unidade_curricular_carga_horaria,
+ unidade_curricular_concluida,
+ unidade_curricular_trancada,
+ unidade_curricular_cursando,
+ unidade_curricular_pendente
+)
+VALUES(
+ 1,
+ 1,
+ 'INTRODUÇÃO À PROGRAMAÇÃO',
+ '80',
+ false,
+ false,
+ true,
+ flase,
 );
 
 

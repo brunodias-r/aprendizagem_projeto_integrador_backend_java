@@ -16,12 +16,12 @@ import com.senac.projetoIntegrador.atividade.dto.AtividadeDto;
 import com.senac.projetoIntegrador.atividade.repository.IAtividadeRepository;
 
 @Repository
-public class AtividadeRepository implements IAtividadeRepository{
+public class AtividadeRepository implements IAtividadeRepository {
 	private JdbcTemplate dbConnection;
-	
+
 	@Autowired
 	QueriesAtiviadade queries;
-	
+
 	private class AtividadeMapper implements RowMapper<AtividadeDto> {
 		@Override
 		public AtividadeDto mapRow(ResultSet rs, int rowNum) throws SQLException {
@@ -31,13 +31,14 @@ public class AtividadeRepository implements IAtividadeRepository{
 			return atividadeDto;
 		}
 	}
-	
+
 	@Autowired
 	private void dbConnection(@Qualifier("dbConnection") DataSource dbConn) {
 		this.dbConnection = new JdbcTemplate(dbConn);
 	}
-	
-	public List<AtividadeDto> getLatestAtividadesByUsuarioId(String usuarioId){
-		return dbConnection.query(queries.getGetLatestAtividadesByUsuarioId(), new AtividadeMapper(), new Object[] {usuarioId});
+
+	public List<AtividadeDto> getLatestAtividadesByUsuarioId(String usuarioId) {
+		return dbConnection.query(queries.getGetLatestAtividadesByUsuarioId(), new AtividadeMapper(),
+				new Object[] { usuarioId });
 	}
 }

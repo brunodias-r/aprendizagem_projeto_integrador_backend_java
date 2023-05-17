@@ -6,11 +6,11 @@ public class UnidadeCurricularDto {
  private String nome;
  private int cargaHoraria;
  private Boolean concluida;
- private Boolean trancada;
  private Boolean cursando;
  private Boolean pendente;
+ private Boolean trancada;
 
- public Long getId() {
+ public Long getId(long l) {
   return id;
  }
 
@@ -26,7 +26,7 @@ public class UnidadeCurricularDto {
   this.modulo = modulo;
  }
 
- public String getNome() {
+ public String getNome(String string) {
   return nome;
  }
 
@@ -34,7 +34,7 @@ public class UnidadeCurricularDto {
   this.nome = nome;
  }
 
- public int getCargaHoraria() {
+ public int getCargaHoraria(String string) {
   return cargaHoraria;
  }
 
@@ -42,7 +42,7 @@ public class UnidadeCurricularDto {
   this.cargaHoraria = cargaHoraria;
  }
 
- public Boolean isConcluida() {
+ public Boolean isConcluida(boolean b) {
   return concluida;
  }
 
@@ -50,15 +50,7 @@ public class UnidadeCurricularDto {
   this.concluida = concluida;
  }
 
- public Boolean isTrancada() {
-  return trancada;
- }
-
- public void setTrancada(Boolean trancada) {
-  this.trancada = trancada;
- }
-
- public Boolean isCursando() {
+ public Boolean isCursando(boolean b) {
   return cursando;
  }
 
@@ -66,12 +58,20 @@ public class UnidadeCurricularDto {
   this.cursando = cursando;
  }
 
- public Boolean isPendente() {
+ public Boolean isPendente(boolean b) {
   return pendente;
  }
 
  public void setPendente(Boolean pendente) {
   this.pendente = pendente;
+ }
+
+ public Boolean isTrancada(boolean b) {
+  return trancada;
+ }
+
+ public void setTrancada(Boolean trancada) {
+  this.trancada = trancada;
  }
 
 }
